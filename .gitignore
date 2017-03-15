@@ -64,3 +64,7 @@ __recovery/
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
 *.stat
+Fontes/Win32/Debug/config.ini
+Fontes/Win32/Debug/FDConnectionDefs.ini
+Fontes/Win32/Debug/FDDrivers.ini
+Fontes/Win64/Debug/config.ini
