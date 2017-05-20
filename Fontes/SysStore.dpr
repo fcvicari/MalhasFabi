@@ -6,7 +6,10 @@ uses
   uBancoDadosAcessoSingleton in 'BancoDados\uBancoDadosAcessoSingleton.pas',
   uBancoDadosAcessoRgn in 'BancoDados\uBancoDadosAcessoRgn.pas',
   uBancoDadosDriverFactory in 'BancoDados\uBancoDadosDriverFactory.pas',
-  uBancoDadosAcessoEnumerador in 'BancoDados\uBancoDadosAcessoEnumerador.pas';
+  uBancoDadosAcessoEnumerador in 'BancoDados\uBancoDadosAcessoEnumerador.pas',
+  uDTOCamposInterface in 'Framework\uDTOCamposInterface.pas',
+  uDTOCamposEnumerador in 'Framework\uDTOCamposEnumerador.pas',
+  uDTOCampos in 'Framework\uDTOCampos.pas';
 
 {$R *.res}
 
