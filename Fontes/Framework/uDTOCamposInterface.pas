@@ -6,7 +6,7 @@ uses
   uDTOCamposEnumerador;
 
 type
-  TDTOCamposInterface = interface
+  IDTOCamposInterface = interface
     function Nome: String;
 
     function Modificado: Boolean;

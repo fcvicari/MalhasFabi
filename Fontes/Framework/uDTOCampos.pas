@@ -8,7 +8,7 @@ uses
   uDTOCamposInterface;
 
 type
-  TDTOCampos = class(TInterfacedObject, TDTOCamposInterface)
+  TDTOCampos = class(TInterfacedObject, IDTOCamposInterface)
   private
     FNome: String;
     FTipoCampo : TTipoCampo;
