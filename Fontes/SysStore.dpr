@@ -9,7 +9,9 @@ uses
   uBancoDadosAcessoEnumerador in 'BancoDados\uBancoDadosAcessoEnumerador.pas',
   uDTOCamposInterface in 'Framework\uDTOCamposInterface.pas',
   uDTOCamposEnumerador in 'Framework\uDTOCamposEnumerador.pas',
-  uDTOCampos in 'Framework\uDTOCampos.pas';
+  uDTOCampos in 'Framework\uDTOCampos.pas',
+  uDTOInterface in 'Framework\uDTOInterface.pas',
+  uDTO in 'Framework\uDTO.pas';
 
 {$R *.res}
 
