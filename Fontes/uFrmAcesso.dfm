@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'SysStore - Gerenciamento de lojas'
-  ClientHeight = 413
-  ClientWidth = 744
+  ClientHeight = 557
+  ClientWidth = 900
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

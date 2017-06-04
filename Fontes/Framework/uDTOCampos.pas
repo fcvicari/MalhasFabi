@@ -35,7 +35,7 @@ type
 
     procedure Limpar;
 
-    Constructor Create(const ANome: String; const ATipoCampo: TTipoCampo;
+    constructor Create(const ANome: String; const ATipoCampo: TTipoCampo;
       const AChave: Boolean; const ADefault: Variant);
   end;
 

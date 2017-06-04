@@ -136,6 +136,13 @@
         <DCCReference Include="Framework\uDTOCampos.pas"/>
         <DCCReference Include="Framework\uDTOInterface.pas"/>
         <DCCReference Include="Framework\uDTO.pas"/>
+        <DCCReference Include="Framework\uDAOInterface.pas"/>
+        <DCCReference Include="Framework\uDTOTypes.pas"/>
+        <DCCReference Include="Framework\uDAO.pas"/>
+        <DCCReference Include="Framework\uGeradorSqlInterface.pas"/>
+        <DCCReference Include="Framework\uExcluirRegistro.pas"/>
+        <DCCReference Include="Framework\uConversao.pas"/>
+        <DCCReference Include="Framework\uInserirRegistro.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -6,7 +6,14 @@ uses
   uDTOCamposEnumerador;
 
 type
-  IDTOCamposInterface = interface
+  IDTOCamposInterface = interface(IInterface)
+
+    function GetValorAtual: Variant;
+    procedure SetValorAtual(AValor: Variant);
+
+    function GetValorAnterior: Variant;
+    procedure SetValorAnterior(AValor: Variant);
+
     function Nome: String;
 
     function Modificado: Boolean;
@@ -17,13 +24,8 @@ type
 
     function ValorDefault: Variant;
 
-    function GetValorAtual: Variant;
-    procedure SetValorAtual(AValor: Variant);
-
-    function GetValorAnterior: Variant;
-    procedure SetValorAnterior(AValor: Variant);
-
     property ValorAtual: Variant read GetValorAtual write SetValorAtual;
+
     property ValorAnterior: Variant read GetValorAnterior write SetValorAnterior;
   end;
 

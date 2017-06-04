@@ -11,7 +11,14 @@ uses
   uDTOCamposEnumerador in 'Framework\uDTOCamposEnumerador.pas',
   uDTOCampos in 'Framework\uDTOCampos.pas',
   uDTOInterface in 'Framework\uDTOInterface.pas',
-  uDTO in 'Framework\uDTO.pas';
+  uDTO in 'Framework\uDTO.pas',
+  uDAOInterface in 'Framework\uDAOInterface.pas',
+  uDTOTypes in 'Framework\uDTOTypes.pas',
+  uDAO in 'Framework\uDAO.pas',
+  uGeradorSqlInterface in 'Framework\uGeradorSqlInterface.pas',
+  uExcluirRegistro in 'Framework\uExcluirRegistro.pas',
+  uConversao in 'Framework\uConversao.pas',
+  uInserirRegistro in 'Framework\uInserirRegistro.pas';
 
 {$R *.res}
 

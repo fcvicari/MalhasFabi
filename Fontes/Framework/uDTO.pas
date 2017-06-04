@@ -4,6 +4,7 @@ interface
 
 uses
   Generics.Collections,
+  uDTOTypes,
   uDTOCamposInterface,
   uDTOCampos,
   uDtoCamposEnumerador,
@@ -13,9 +14,11 @@ type
   TDTO = class(TInterfacedObject, IDTOInterface)
   private
     FTabela: String;
-    FListaCampos: TObjectDictionary<String, TDTOCampos>;
+    FListaCampos: TDicionarioDTO;
   public
     function Tabela: String;
+
+    function ListaCampos: TDicionarioDTO;
 
     function BuscarCampo(ACampo: String): IDTOCamposInterface;
 
@@ -47,13 +50,18 @@ end;
 constructor TDTO.Create(ATabela: String);
 begin
   FTabela := ATabela;
-  FListaCampos := TObjectDictionary<String, TDTOCampos>.Create([doOwnsValues]);
+  FListaCampos := TDicionarioDTO.Create([doOwnsValues]);
 end;
 
 destructor TDTO.Destroy;
 begin
   FListaCampos.Free;
   inherited;
+end;
+
+function TDTO.ListaCampos: TDicionarioDTO;
+begin
+  Result := FListaCampos;
 end;
 
 function TDTO.Tabela: String;

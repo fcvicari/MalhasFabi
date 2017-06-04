@@ -3,11 +3,14 @@ unit uDTOInterface;
 interface
 
 uses
+  uDTOTypes,
   uDTOCamposInterface,
   uDtoCamposEnumerador;
 
 type
   IDTOInterface = interface
+    function ListaCampos: TDicionarioDTO;
+
     function Tabela: String;
 
     function BuscarCampo(ACampo: String): IDTOCamposInterface;
