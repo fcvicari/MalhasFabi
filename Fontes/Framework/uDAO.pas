@@ -3,6 +3,9 @@ unit uDAO;
 interface
 
 uses
+  uBancoDadosAcessoSingleton,
+  uGeradorSqlInterface,
+  uExcluirRegistro,
   uDAOInterface,
   uDTOInterface;
 
@@ -26,15 +29,24 @@ begin
 
 end;
 
-function TDao.Excluir(ADTO: IDTOInterface): Boolean;
-begin
 
+
+function TDao.Excluir(ADTO: IDTOInterface): Boolean;
+var
+  oExcluir: IGeradorSql;
+begin
+  oExcluir := TExcluirRegistro.Create;
+  oExcluir.Execute(TBancoDadosAcessoSingleton.GetInstance, ADTO);
 end;
+
+
 
 function TDao.Inserir(ADTO: IDTOInterface): Boolean;
 begin
 
 end;
+
+
 
 function TDao.Localizar(ADTO: IDTOInterface): Boolean;
 begin
