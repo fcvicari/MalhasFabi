@@ -1,4 +1,4 @@
-unit uDTOCamposEnumerador;
+unit uFramework.TipoCampoEnumerador;
 
 interface
 

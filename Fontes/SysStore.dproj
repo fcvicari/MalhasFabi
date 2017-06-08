@@ -127,22 +127,23 @@
             <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="BancoDados\uBancoDadosAcessoSingleton.pas"/>
-        <DCCReference Include="BancoDados\uBancoDadosAcessoRgn.pas"/>
-        <DCCReference Include="BancoDados\uBancoDadosDriverFactory.pas"/>
-        <DCCReference Include="BancoDados\uBancoDadosAcessoEnumerador.pas"/>
-        <DCCReference Include="Framework\uDTOCamposInterface.pas"/>
-        <DCCReference Include="Framework\uDTOCamposEnumerador.pas"/>
-        <DCCReference Include="Framework\uDTOCampos.pas"/>
-        <DCCReference Include="Framework\uDTOInterface.pas"/>
-        <DCCReference Include="Framework\uDTO.pas"/>
-        <DCCReference Include="Framework\uDAOInterface.pas"/>
-        <DCCReference Include="Framework\uDTOTypes.pas"/>
-        <DCCReference Include="Framework\uDAO.pas"/>
-        <DCCReference Include="Framework\uGeradorSqlInterface.pas"/>
-        <DCCReference Include="Framework\uExcluirRegistro.pas"/>
-        <DCCReference Include="Framework\uConversao.pas"/>
-        <DCCReference Include="Framework\uInserirRegistro.pas"/>
+        <DCCReference Include="BancoDados\uBancoDados.AcessoSingleton.pas"/>
+        <DCCReference Include="BancoDados\uBancoDados.AcessoRgn.pas"/>
+        <DCCReference Include="BancoDados\uBancoDados.DriverFactory.pas"/>
+        <DCCReference Include="BancoDados\uBancoDados.Enumerador.pas"/>
+        <DCCReference Include="Framework\DTO\uFramework.DTO.CamposInterface.pas"/>
+        <DCCReference Include="Framework\uFramework.TipoCampoEnumerador.pas"/>
+        <DCCReference Include="Framework\DTO\uFramework.DTO.Campos.pas"/>
+        <DCCReference Include="Framework\DTO\uFramework.DTOInterface.pas"/>
+        <DCCReference Include="Framework\DTO\uFramework.DTO.pas"/>
+        <DCCReference Include="Framework\DAO\uFramework.DAOInterface.pas"/>
+        <DCCReference Include="Framework\DTO\uFramework.DTOTypes.pas"/>
+        <DCCReference Include="Framework\DAO\uFramework.DAO.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.RegistroInterface.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.Excluir.pas"/>
+        <DCCReference Include="Framework\uFramework.Conversao.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.Inserir.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.Alterar.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

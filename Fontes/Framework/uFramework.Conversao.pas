@@ -1,13 +1,13 @@
-unit uConversao;
+unit uFramework.Conversao;
 
 interface
 
 uses
-  uDTOCamposEnumerador,
-  System.SysUtils;
+  System.SysUtils,
+  uFramework.TipoCampoEnumerador;
 
 type
-  TConversao = class
+  TFrameworkConversao = class
     class function VarToDateTime(Value: Variant): TDateTime;
 
     class function VarToInteger(Value: Variant): Integer;
@@ -21,7 +21,7 @@ implementation
 
 { TConversao }
 
-class function TConversao.VarToDateTime(Value: Variant): TDateTime;
+class function TFrameworkConversao.VarToDateTime(Value: Variant): TDateTime;
 begin
   try
     Result := StrToDate(Value);
@@ -30,7 +30,7 @@ begin
   end;
 end;
 
-class function TConversao.VarToDouble(Value: Variant): Double;
+class function TFrameworkConversao.VarToDouble(Value: Variant): Double;
 begin
   try
     Result := StrToFloat(Value);
@@ -39,7 +39,7 @@ begin
   end;
 end;
 
-class function TConversao.VarToInteger(Value: Variant): Integer;
+class function TFrameworkConversao.VarToInteger(Value: Variant): Integer;
 begin
   try
     Result := StrToInt64(Value);
@@ -48,7 +48,7 @@ begin
   end;
 end;
 
-class function TConversao.VarToSql(ATipo: TTipoCampo; AValue: Variant): String;
+class function TFrameworkConversao.VarToSql(ATipo: TTipoCampo; AValue: Variant): String;
 begin
   case ATipo of
     tcInteiro, tcNumerico: Result := AValue;

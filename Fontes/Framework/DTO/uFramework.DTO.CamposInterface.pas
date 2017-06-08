@@ -1,12 +1,12 @@
-unit uDTOCamposInterface;
+unit uFramework.DTO.CamposInterface;
 
 interface
 
 uses
-  uDTOCamposEnumerador;
+  uFramework.TipoCampoEnumerador;
 
 type
-  IDTOCamposInterface = interface(IInterface)
+  IFrameworkDTOCamposInterface = interface(IInterface)
 
     function GetValorAtual: Variant;
     procedure SetValorAtual(AValor: Variant);

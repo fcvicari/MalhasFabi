@@ -1,9 +1,10 @@
-unit uBancoDadosAcessoSingleton;
+unit uBancoDados.AcessoSingleton;
 
 interface
 
 uses
-  uBancoDadosAcessoRgn, System.SysUtils;
+  System.SysUtils,
+  uBancoDados.AcessoRgn;
 
 type
   TBancoDadosAcessoSingleton = class

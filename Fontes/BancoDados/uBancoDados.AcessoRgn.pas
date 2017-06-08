@@ -1,11 +1,11 @@
-unit uBancoDadosAcessoRgn;
+unit uBancoDados.AcessoRgn;
 
 interface
 
 uses
   System.Classes, System.IniFiles, System.SysUtils, Vcl.Forms, System.TypInfo,
-  FireDAC.Comp.Client, FireDAC.Stan.Def, FireDAC.Phys, uBancoDadosDriverFactory,
-  FireDAC.Comp.UI, uBancoDadosAcessoEnumerador;
+  FireDAC.Comp.Client, FireDAC.Stan.Def, FireDAC.Phys, uBancoDados.DriverFactory,
+  FireDAC.Comp.UI, uBancoDados.Enumerador;
 
 type
   TBancoDadosAcessoRgn = class(TFDConnection)
@@ -28,7 +28,7 @@ constructor TBancoDadosAcessoRgn.Create(AOwner: TComponent);
 begin
   inherited;
   LerCofiguracao;
-  oDriverLink := TBancoDadosDriverFactory.Get(TTipoBancoDados(GetEnumValue(TypeInfo(TTipoBancoDados), Params.DriverID)));
+  oDriverLink := TBancoDadosDriverFactory.Get(TBancoDadosEnumerador(GetEnumValue(TypeInfo(TBancoDadosEnumerador), Params.DriverID)));
   oWaitCursor := TFDGUIxWaitCursor.Create(nil);
 end;
 

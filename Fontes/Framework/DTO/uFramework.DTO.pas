@@ -1,26 +1,26 @@
-unit uDTO;
+unit uFramework.DTO;
 
 interface
 
 uses
   Generics.Collections,
-  uDTOTypes,
-  uDTOCamposInterface,
-  uDTOCampos,
-  uDtoCamposEnumerador,
-  uDTOInterface;
+  uFramework.DTOTypes,
+  uFramework.DTO.CamposInterface,
+  uFramework.DTO.Campos,
+  uFramework.TipoCampoEnumerador,
+  uFramework.DTOInterface;
 
 type
-  TDTO = class(TInterfacedObject, IDTOInterface)
+  TDTO = class(TInterfacedObject, IFrameworkDTOInterface)
   private
     FTabela: String;
-    FListaCampos: TDicionarioDTO;
+    FListaCampos: TFrameworkDTODicionario;
   public
     function Tabela: String;
 
-    function ListaCampos: TDicionarioDTO;
+    function ListaCampos: TFrameworkDTODicionario;
 
-    function BuscarCampo(ACampo: String): IDTOCamposInterface;
+    function BuscarCampo(ACampo: String): IFrameworkDTOCamposInterface;
 
     procedure AdicionarCampo(const ANome: String; const ATipoCampo: TTipoCampo;
       const AChave: Boolean; const ADefault: Variant);
@@ -36,13 +36,13 @@ implementation
 procedure TDTO.AdicionarCampo(const ANome: String; const ATipoCampo: TTipoCampo;
   const AChave: Boolean; const ADefault: Variant);
 var
-  oCampo: TDTOCampos;
+  oCampo: TFrameworkDTOCampos;
 begin
-  oCampo := TDTOCampos.Create(ANome, ATipoCampo, AChave, ADefault);
+  oCampo := TFrameworkDTOCampos.Create(ANome, ATipoCampo, AChave, ADefault);
   FListaCampos.Add(ANome, oCampo);
 end;
 
-function TDTO.BuscarCampo(ACampo: String): IDTOCamposInterface;
+function TDTO.BuscarCampo(ACampo: String): IFrameworkDTOCamposInterface;
 begin
   Result := FListaCampos[ACampo];
 end;
@@ -50,7 +50,7 @@ end;
 constructor TDTO.Create(ATabela: String);
 begin
   FTabela := ATabela;
-  FListaCampos := TDicionarioDTO.Create([doOwnsValues]);
+  FListaCampos := TFrameworkDTODicionario.Create([doOwnsValues]);
 end;
 
 destructor TDTO.Destroy;
@@ -59,7 +59,7 @@ begin
   inherited;
 end;
 
-function TDTO.ListaCampos: TDicionarioDTO;
+function TDTO.ListaCampos: TFrameworkDTODicionario;
 begin
   Result := FListaCampos;
 end;

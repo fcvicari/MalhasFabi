@@ -1,14 +1,14 @@
-unit uDTOCampos;
+unit uFramework.DTO.Campos;
 
 interface
 
 uses
   System.Variants,
-  uDTOCamposEnumerador,
-  uDTOCamposInterface;
+  uFramework.TipoCampoEnumerador,
+  uFramework.DTO.CamposInterface;
 
 type
-  TDTOCampos = class(TInterfacedObject, IDTOCamposInterface)
+  TFrameworkDTOCampos = class(TInterfacedObject, IFrameworkDTOCamposInterface)
   private
     FNome: String;
     FTipoCampo : TTipoCampo;
@@ -43,12 +43,12 @@ implementation
 
 { TDTOCampos }
 
-function TDTOCampos.Chave: Boolean;
+function TFrameworkDTOCampos.Chave: Boolean;
 begin
   Result := FChave;
 end;
 
-constructor TDTOCampos.Create(const ANome: String; const ATipoCampo: TTipoCampo;
+constructor TFrameworkDTOCampos.Create(const ANome: String; const ATipoCampo: TTipoCampo;
   const AChave: Boolean; const ADefault: Variant);
 begin
   FNome := ANome;
@@ -59,48 +59,48 @@ begin
   Limpar;
 end;
 
-function TDTOCampos.GetValorAnterior: Variant;
+function TFrameworkDTOCampos.GetValorAnterior: Variant;
 begin
   Result := FValorAnterior;
 end;
 
-function TDTOCampos.GetValorAtual: Variant;
+function TFrameworkDTOCampos.GetValorAtual: Variant;
 begin
   Result := FValorAtual;
 end;
 
-procedure TDTOCampos.Limpar;
+procedure TFrameworkDTOCampos.Limpar;
 begin
   FValorAnterior := null;
   FValorAtual := null;
 end;
 
-function TDTOCampos.Modificado: Boolean;
+function TFrameworkDTOCampos.Modificado: Boolean;
 begin
   Result := (FValorAtual <> FValorAnterior);
 end;
 
-function TDTOCampos.Nome: String;
+function TFrameworkDTOCampos.Nome: String;
 begin
   Result := FNome;
 end;
 
-procedure TDTOCampos.SetValorAnterior(AValor: Variant);
+procedure TFrameworkDTOCampos.SetValorAnterior(AValor: Variant);
 begin
   FValorAnterior := AValor;
 end;
 
-procedure TDTOCampos.SetValorAtual(AValor: Variant);
+procedure TFrameworkDTOCampos.SetValorAtual(AValor: Variant);
 begin
   FValorAtual := AValor;
 end;
 
-function TDTOCampos.TipoCampo: TTipoCampo;
+function TFrameworkDTOCampos.TipoCampo: TTipoCampo;
 begin
   Result := FTipoCampo;
 end;
 
-function TDTOCampos.ValorDefault: Variant;
+function TFrameworkDTOCampos.ValorDefault: Variant;
 begin
   Result := FValorDefault;
 end;
