@@ -1,9 +1,9 @@
 object Form1: TForm1
-  Left = 0
-  Top = 0
+  Left = 165
+  Top = 62
   Caption = 'SysStore - Gerenciamento de lojas'
-  ClientHeight = 557
-  ClientWidth = 900
+  ClientHeight = 457
+  ClientWidth = 858
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesigned
   WindowState = wsMaximized
   OnCreate = FormCreate
   PixelsPerInch = 96

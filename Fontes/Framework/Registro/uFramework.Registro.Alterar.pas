@@ -13,15 +13,15 @@ uses
 type
   TFrameworkRegistroAlterar = class(TInterfacedObject, IFrameworkRegistroInterface)
   public
-    function Execute(AConexao: TBancoDadosAcessoRgn; ADto: IFrameworkDTOInterface): Boolean;
+    function Execute(const AConexao: TBancoDadosAcessoRgn; const ADto: IFrameworkDTOInterface): Boolean;
   end;
 
 implementation
 
 { TFrameworkRegistroAlterar }
 
-function TFrameworkRegistroAlterar.Execute(AConexao: TBancoDadosAcessoRgn;
-  ADto: IFrameworkDTOInterface): Boolean;
+function TFrameworkRegistroAlterar.Execute(const AConexao: TBancoDadosAcessoRgn;
+  const ADto: IFrameworkDTOInterface): Boolean;
 var
   sSql, sSqlCampos, sChave: String;
   oCampos: IFrameworkDTOCamposInterface;
@@ -34,17 +34,17 @@ begin
   begin
     if (oCampos.Chave) then
     begin
-      if (sChave.Trim <> '') then
+      if (not(sChave.IsEmpty)) then
         sChave := sChave + ' and';
 
       sChave := sChave + ' ' + oCampos.Nome + ' = ' +TFrameworkConversao.VarToSql(oCampos.TipoCampo, oCampos.ValorAnterior);
     end
     else
     begin
-      if (sSqlCampos.Trim <> '') then
+      if (not(sSqlCampos.IsEmpty)) then
         sSqlCampos := sSqlCampos + ',';
 
-      sSqlCampos := sSqlCampos + ' ' + oCampos.Nome + ' = ' +TFrameworkConversao.VarToSql(oCampos.TipoCampo, oCampos.ValorAnterior);
+      sSqlCampos := sSqlCampos + ' ' + oCampos.Nome + ' = ' + TFrameworkConversao.VarToSql(oCampos.TipoCampo, oCampos.ValorAnterior);
     end;
   end;
 

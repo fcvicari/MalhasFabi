@@ -42,10 +42,14 @@ begin
   FListaCampos.Add(ANome, oCampo);
 end;
 
+
+
 function TDTO.BuscarCampo(ACampo: String): IFrameworkDTOCamposInterface;
 begin
   Result := FListaCampos[ACampo];
 end;
+
+
 
 constructor TDTO.Create(ATabela: String);
 begin
@@ -53,16 +57,22 @@ begin
   FListaCampos := TFrameworkDTODicionario.Create([doOwnsValues]);
 end;
 
+
+
 destructor TDTO.Destroy;
 begin
   FListaCampos.Free;
   inherited;
 end;
 
+
+
 function TDTO.ListaCampos: TFrameworkDTODicionario;
 begin
   Result := FListaCampos;
 end;
+
+
 
 function TDTO.Tabela: String;
 begin

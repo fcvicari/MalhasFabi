@@ -8,25 +8,29 @@ uses
   uFramework.Registro.Excluir,
   uFramework.Registro.Inserir,
   uFramework.Registro.Alterar,
+  uFramework.Registro.LocalizarInterface,
+  uFramework.Registro.Localizar,
   uFramework.DTOInterface,
-  uFramework.DAOInterface;
+  uFramework.DTOTypes,
+  uFramework.DAOInterface,
+  uFramework.Registro.FiltrosTypes;
 
 type
   TFrameworkDAO = class(TInterfacedObject, IFrameworkDAOInterface)
-    function Localizar(ADTO: IFrameworkDTOInterface): Boolean;
+    function Localizar(const AFiltro: TFrameworkFiltroDicionario; var ADTO: IFrameworkDTOInterface): Boolean;
 
-    function Inserir(ADTO: IFrameworkDTOInterface): Boolean;
+    function Inserir(const ADTO: IFrameworkDTOInterface): Boolean;
 
-    function Alterar(ADTO: IFrameworkDTOInterface): Boolean;
+    function Alterar(const ADTO: IFrameworkDTOInterface): Boolean;
 
-    function Excluir(ADTO: IFrameworkDTOInterface): Boolean;
+    function Excluir(const ADTO: IFrameworkDTOInterface): Boolean;
   end;
 
 implementation
 
 { TFrameworkDAO }
 
-function TFrameworkDAO.Alterar(ADTO: IFrameworkDTOInterface): Boolean;
+function TFrameworkDAO.Alterar(const ADTO: IFrameworkDTOInterface): Boolean;
 var
   oAlterar: IFrameworkRegistroInterface;
 begin
@@ -40,7 +44,7 @@ end;
 
 
 
-function TFrameworkDAO.Excluir(ADTO: IFrameworkDTOInterface): Boolean;
+function TFrameworkDAO.Excluir(const ADTO: IFrameworkDTOInterface): Boolean;
 var
   oExcluir: IFrameworkRegistroInterface;
 begin
@@ -54,7 +58,7 @@ end;
 
 
 
-function TFrameworkDAO.Inserir(ADTO: IFrameworkDTOInterface): Boolean;
+function TFrameworkDAO.Inserir(const ADTO: IFrameworkDTOInterface): Boolean;
 var
   oInserir: IFrameworkRegistroInterface;
 begin
@@ -68,9 +72,16 @@ end;
 
 
 
-function TFrameworkDAO.Localizar(ADTO: IFrameworkDTOInterface): Boolean;
+function TFrameworkDAO.Localizar(const AFiltro: TFrameworkFiltroDicionario; var ADTO: IFrameworkDTOInterface): Boolean;
+var
+  oLocalizar: IFrameworkRegistroLocalizarInterface;
 begin
-
+  oLocalizar := TFrameworkRegistroLocalizar.Create;
+  try
+    Result := oLocalizar.Execute(TBancoDadosAcessoSingleton.GetInstance, AFiltro, ADTO);
+  except
+    Result := False;
+  end;
 end;
 
 end.

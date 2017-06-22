@@ -8,7 +8,7 @@ uses
 
 type
   IFrameworkRegistroInterface = interface
-    function Execute(AConexao: TBancoDadosAcessoRgn; ADto: IFrameworkDTOInterface): Boolean;
+    function Execute(const AConexao: TBancoDadosAcessoRgn; const ADto: IFrameworkDTOInterface): Boolean;
   end;
 
 implementation

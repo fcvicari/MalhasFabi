@@ -14,15 +14,15 @@ uses
 type
   TFrameworkRegistroExcluir = class(TInterfacedObject, IFrameworkRegistroInterface)
   public
-    function Execute(AConexao: TBancoDadosAcessoRgn; ADto: IFrameworkDTOInterface): Boolean;
+    function Execute(const AConexao: TBancoDadosAcessoRgn; const ADto: IFrameworkDTOInterface): Boolean;
   end;
 
 implementation
 
 { TExcluirRegistro }
 
-function TFrameworkRegistroExcluir.Execute(AConexao: TBancoDadosAcessoRgn;
-  ADto: IFrameworkDTOInterface): Boolean;
+function TFrameworkRegistroExcluir.Execute(const AConexao: TBancoDadosAcessoRgn;
+  const ADto: IFrameworkDTOInterface): Boolean;
 var
   sSql: String;
   oCampos: IFrameworkDTOCamposInterface;
@@ -34,7 +34,7 @@ begin
   begin
     if (oCampos.Chave) then
     begin
-      if (sSql.Trim <> '') then
+      if (not(sSql.IsEmpty)) then
         sSql := sSql + ' and ';
 
       sSql := sSql + oCampos.Nome + ' = ' + TFrameworkConversao.VarToSql(oCampos.TipoCampo, oCampos.ValorAnterior)

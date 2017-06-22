@@ -144,6 +144,11 @@
         <DCCReference Include="Framework\uFramework.Conversao.pas"/>
         <DCCReference Include="Framework\Registro\uFramework.Registro.Inserir.pas"/>
         <DCCReference Include="Framework\Registro\uFramework.Registro.Alterar.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.Localizar.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.FiltrosInterface.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.Filtros.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.FiltrosTypes.pas"/>
+        <DCCReference Include="Framework\Registro\uFramework.Registro.LocalizarInterface.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

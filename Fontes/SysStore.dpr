@@ -19,7 +19,12 @@ uses
   uFramework.Registro.Excluir in 'Framework\Registro\uFramework.Registro.Excluir.pas',
   uFramework.Conversao in 'Framework\uFramework.Conversao.pas',
   uFramework.Registro.Inserir in 'Framework\Registro\uFramework.Registro.Inserir.pas',
-  uFramework.Registro.Alterar in 'Framework\Registro\uFramework.Registro.Alterar.pas';
+  uFramework.Registro.Alterar in 'Framework\Registro\uFramework.Registro.Alterar.pas',
+  uFramework.Registro.Localizar in 'Framework\Registro\uFramework.Registro.Localizar.pas',
+  uFramework.Registro.FiltrosInterface in 'Framework\Registro\uFramework.Registro.FiltrosInterface.pas',
+  uFramework.Registro.Filtros in 'Framework\Registro\uFramework.Registro.Filtros.pas',
+  uFramework.Registro.FiltrosTypes in 'Framework\Registro\uFramework.Registro.FiltrosTypes.pas',
+  uFramework.Registro.LocalizarInterface in 'Framework\Registro\uFramework.Registro.LocalizarInterface.pas';
 
 {$R *.res}
 
